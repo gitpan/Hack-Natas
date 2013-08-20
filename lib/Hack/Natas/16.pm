@@ -2,11 +2,11 @@ package Hack::Natas::16;
 use strict;
 use warnings;
 use v5.16.0;
-our $VERSION = '0.002'; # VERSION
+our $VERSION = '0.003'; # VERSION
 # ABSTRACT: solve level 16 of the Natas server-side security war games
 
 use Carp qw(confess);
-use Moo;
+use Moo 1.003000; # RT#82711
 with qw(Hack::Natas Hack::Natas::IncrementalSearch);
 
 
@@ -69,7 +69,7 @@ Hack::Natas::16 - solve level 16 of the Natas server-side security war games
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 DESCRIPTION
 

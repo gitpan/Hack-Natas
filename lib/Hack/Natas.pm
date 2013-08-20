@@ -2,7 +2,7 @@ package Hack::Natas;
 use strict;
 use warnings;
 use v5.16.0;
-our $VERSION = '0.002'; # VERSION
+our $VERSION = '0.003'; # VERSION
 # ABSTRACT: solve some of the Natas server-side security war games
 
 use Carp qw/ confess /;
@@ -69,7 +69,7 @@ Hack::Natas - solve some of the Natas server-side security war games
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 DESCRIPTION
 

@@ -4,7 +4,7 @@ use warnings;
 use v5.16.0;
 package
     natas16;
-our $VERSION = '0.002'; # VERSION
+our $VERSION = '0.003'; # VERSION
 # ABSTRACT: solve level 16 of overthewire.org's Natas server-side security war games
 
 use Hack::Natas::16;
@@ -17,14 +17,13 @@ if ($opts->{version}) {
     say __PACKAGE__ . ' version ' . (__PACKAGE__->VERSION // 'dev');
     exit;
 }
-unless (@ARGV == 1) {
-    require Pod::Usage;
-    Pod::Usage::pod2usage( -msg => 'Incorrect usage' );
-}
 
+my $http_pass = shift || do {
+    require Term::ReadPassword;
+    Term::ReadPassword::read_password('Password for this level: ');
+};
 
-
-my $hack = Hack::Natas::16->new(http_pass => shift @ARGV);
+my $hack = Hack::Natas::16->new(http_pass => $http_pass);
 local $SIG{INT} = sub { printf "\rPassword so far: %s\n", $hack->password_so_far; exit 1 };
 $hack->run;
 
@@ -40,11 +39,11 @@ natas16 - solve level 16 of overthewire.org's Natas server-side security war gam
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 SYNOPSIS
 
-    natas16 password
+B<natas16> [ password ]
 
 =head1 DESCRIPTION
 
@@ -53,8 +52,10 @@ Natas is the server-side security challenge.
 
 Level 16 requires you to do blind shell injection. Guessing each one-character
 slice of a 32-character password is tedious and prone to errors if done manually,
-so this script automates the process. Simply provide the password for level 16
-as the first argument on the command line
+so this script automates the process. You will be prompted interactively for the
+password to access this level. If you prefer to run noninteractively, you can
+give the password as the first argument on the command line, but note that the
+password will be visible to other users on the system.
 
 =head1 OPTIONS
 
@@ -65,9 +66,6 @@ as the first argument on the command line
 Print the version number and exit
 
 =back
-
-=for test_synopsis 1;
-__END__
 
 =head1 SEE ALSO
 

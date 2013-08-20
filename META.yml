@@ -28,9 +28,9 @@ requires:
   Data::Dumper: 0
   Getopt::Long: 0
   HTTP::Tiny: 0.034
-  Moo: 0
+  Moo: 1.003000
   Moo::Role: 0
-  Pod::Usage: 0
+  Term::ReadPassword: 0
   Type::Utils: 0
   Types::Standard: 0
   URI: 0
@@ -41,4 +41,4 @@ resources:
   bugtracker: https://github.com/doherty/Hack-Natas/issues
   homepage: https://hashbang.ca/tag/natas
   repository: git://github.com/doherty/Hack-Natas.git
-version: 0.002
+version: 0.003

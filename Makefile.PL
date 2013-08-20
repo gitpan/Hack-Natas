@@ -32,9 +32,9 @@ my %WriteMakefileArgs = (
     "Data::Dumper" => 0,
     "Getopt::Long" => 0,
     "HTTP::Tiny" => "0.034",
-    "Moo" => 0,
+    "Moo" => "1.003000",
     "Moo::Role" => 0,
-    "Pod::Usage" => 0,
+    "Term::ReadPassword" => 0,
     "Type::Utils" => 0,
     "Types::Standard" => 0,
     "URI" => 0,
@@ -47,7 +47,7 @@ my %WriteMakefileArgs = (
     "Test::Script" => "1.05",
     "blib" => 0
   },
-  "VERSION" => "0.002",
+  "VERSION" => "0.003",
   "test" => {
     "TESTS" => "t/*.t"
   }

@@ -2,7 +2,7 @@ package Hack::Natas::IncrementalSearch;
 use strict;
 use warnings;
 use v5.16.0;
-our $VERSION = '0.002'; # VERSION
+our $VERSION = '0.003'; # VERSION
 # ABSTRACT: do incremental searches for some Natas challenges
 
 use Types::Standard qw(Int Str);
@@ -44,7 +44,7 @@ Hack::Natas::IncrementalSearch - do incremental searches for some Natas challeng
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 DESCRIPTION
 
